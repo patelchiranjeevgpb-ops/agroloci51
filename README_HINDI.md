@@ -1,8 +1,9 @@
-AgroLoci 51 V3.1 Compact Fix
+AgroLoci 51 V3.2 Full-screen Fix
 
-इस update में mobile पर नीचे दिखने वाला बड़ा खाली white space कम किया गया है।
-Bottom navigation अब content के बाद compact तरीके से रहती है।
-V3 GPB module और बाकी सभी features वैसे ही हैं।
+- Installed app में बड़ा खाली white area कम किया
+- Bottom navigation content के तुरंत बाद
+- Tall mobile के लिए Quick Test + Genetics cards
+- पुराने cached CSS/JS को force-refresh करने के लिए cache-busting
 
-Update:
-Extract ZIP → existing agroloci51 GitHub repo → Upload files → replace same-name files → Commit changes.
+Deploy के बाद app पूरी तरह बंद करके दोबारा खोलें।
+अगर पुराना layout रहे, installed app uninstall करके website से दोबारा Install करें।
