@@ -1,36 +1,25 @@
-# AgroLoci 51 — Ready App
+# AgroLoci 51 V2
 
-यह एक ready-to-use Progressive Web App (PWA) है।
+V2 includes:
+- Professional responsive mobile home
+- Subject-wise Agriculture section
+- Competitive Exam section
+- GPB-focused core identity
+- Subject detail pages with Overview / Notes / MCQ / Videos tabs
+- Searchable Notes
+- Demo MCQ quiz with score
+- Videos, Updates and About
+- PWA / Install App support
+- Improved mobile layout with reduced empty-space problem
 
-## इसमें अभी क्या बना है
-- Home dashboard
-- Courses
-- Notes / PDF section
-- MCQ Quiz with score
-- Video section
-- Exam updates
-- About AgroLoci 51
-- Offline support
-- Mobile में Install App support
+## GitHub update
+Upload and replace these files in the existing `agroloci51` repository:
+- index.html
+- style.css
+- app.js
+- content.js
+- sw.js
+- manifest.webmanifest
+- assets folder (can remain if unchanged)
 
-## सबसे आसान तरीका: GitHub Pages पर डालें
-1. GitHub में नया repository बनाएं: `agroloci51`
-2. इस ZIP की सारी files repository के root में upload करें.
-3. Settings > Pages में जाएं.
-4. Source: Deploy from a branch
-5. Branch: main / root
-6. Save करें.
-7. कुछ मिनट बाद website/app link मिल जाएगा.
-8. Android Chrome में link खोलकर "Install app" / "Add to Home screen" करें.
-
-## Content बदलना
-`content.js` खोलें:
-- notes में अपने PDF links डालें
-- videos में YouTube links डालें
-- updates में notices डालें
-
-## Play Store
-यह PWA पहले free में चल सकती है. Play Store के लिए बाद में इसे Android package (AAB) में wrap किया जा सकता है.
-
-## Important
-Student login, paid courses, live test backend, notifications और admin panel के लिए बाद में Firebase/Supabase/backend जोड़ना होगा.
+Then commit changes. GitHub Pages will redeploy automatically.
