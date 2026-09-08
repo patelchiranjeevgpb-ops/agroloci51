@@ -1,9 +1,10 @@
-AgroLoci 51 V3.2 Full-screen Fix
+AgroLoci 51 V3.3 Bigger UI
 
-- Installed app में बड़ा खाली white area कम किया
-- Bottom navigation content के तुरंत बाद
-- Tall mobile के लिए Quick Test + Genetics cards
-- पुराने cached CSS/JS को force-refresh करने के लिए cache-busting
+Changes:
+- Bottom navigation height and icons increased
+- Bottom nav labels increased
+- Top three-dot/menu button tap area increased
+- Mobile controls now easier to press
+- Cache version bumped to V3.3
 
-Deploy के बाद app पूरी तरह बंद करके दोबारा खोलें।
-अगर पुराना layout रहे, installed app uninstall करके website से दोबारा Install करें।
+Upload all extracted files to the existing GitHub repo and commit changes.

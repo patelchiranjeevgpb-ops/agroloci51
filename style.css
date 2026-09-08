@@ -110,3 +110,93 @@ main,.page,#home{height:auto!important;min-height:0!important}
   .quick-zone,.brand-footer{margin-left:10px;margin-right:10px}
   .bottom-nav{position:relative!important;bottom:auto!important;margin-top:0!important}
 }
+
+
+/* ===== V3.3 Bigger mobile navigation + top menu controls ===== */
+
+/* Bottom navigation: larger and easier to tap */
+.bottom-nav{
+  min-height:76px !important;
+  height:76px !important;
+  padding:8px 6px 10px !important;
+  gap:4px !important;
+  align-items:center !important;
+}
+
+.bottom-nav button,
+.bottom-nav a,
+.bottom-nav .nav-item{
+  min-width:58px !important;
+  min-height:58px !important;
+  padding:7px 8px !important;
+  border-radius:14px !important;
+  font-size:12px !important;
+  line-height:1.15 !important;
+}
+
+.bottom-nav svg,
+.bottom-nav i,
+.bottom-nav .icon,
+.bottom-nav .nav-icon{
+  width:25px !important;
+  height:25px !important;
+  font-size:25px !important;
+}
+
+.bottom-nav small,
+.bottom-nav span{
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+
+/* Top-right three-dot / menu button: bigger tap target */
+.menu-btn,
+.more-btn,
+.top-menu-btn,
+.kebab-btn,
+button[aria-label*="menu" i],
+button[aria-label*="more" i],
+button[title*="menu" i],
+button[title*="more" i]{
+  width:46px !important;
+  height:46px !important;
+  min-width:46px !important;
+  min-height:46px !important;
+  padding:0 !important;
+  border-radius:14px !important;
+  font-size:28px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* Common three-dot characters */
+.menu-btn span,
+.more-btn span,
+.top-menu-btn span,
+.kebab-btn span{
+  font-size:30px !important;
+  line-height:1 !important;
+  font-weight:900 !important;
+}
+
+/* Header logo/title area slightly larger for mobile app feel */
+@media(max-width:640px){
+  .bottom-nav{
+    min-height:78px !important;
+    height:78px !important;
+  }
+
+  .bottom-nav button,
+  .bottom-nav a,
+  .bottom-nav .nav-item{
+    min-height:60px !important;
+  }
+
+  header button,
+  .topbar button,
+  .app-header button{
+    min-width:44px;
+    min-height:44px;
+  }
+}
