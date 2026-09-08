@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0d4f2e" />
+  <meta name="description" content="AgroLoci 51 — Agriculture Learning & Competitive Exams" />
+  <title>AgroLoci 51</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <div>
+      <div class="brand-mini">AGROLOCI 51</div>
+      <div class="brand-sub">Agriculture Learning Platform</div>
+    </div>
+    <button class="install-btn" id="installBtn" hidden>Install</button>
+  </header>
+
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <img src="assets/logo.png" alt="AgroLoci 51" />
+      <div><b>AgroLoci 51</b><small>Learn • Practice • Grow</small></div>
+    </div>
+    <nav>
+      <button data-go="home">🏠 Home</button>
+      <button data-go="courses">📚 Courses</button>
+      <button data-go="notes">📝 Notes</button>
+      <button data-go="quiz">🎯 MCQ Practice</button>
+      <button data-go="videos">🎥 Videos</button>
+      <button data-go="updates">📢 Updates</button>
+      <button data-go="about">🧬 About</button>
+    </nav>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <img class="hero-logo" src="assets/logo.png" alt="AgroLoci 51 logo" />
+        <h1>AgroLoci 51</h1>
+        <p>Agriculture Learning & Competitive Exams</p>
+        <div class="chips"><span>🌱 Agriculture</span><span>🧬 GPB</span><span>🎯 Exams</span></div>
+      </div>
+
+      <div class="section-title"><h2>Start Learning</h2><span>All in one place</span></div>
+      <div class="grid">
+        <button class="card" data-go="courses"><b>📚</b><strong>Courses</strong><small>Subject-wise learning</small></button>
+        <button class="card" data-go="notes"><b>📝</b><strong>Notes & PDFs</strong><small>Quick revision material</small></button>
+        <button class="card" data-go="quiz"><b>🎯</b><strong>MCQ Practice</strong><small>Score & explanations</small></button>
+        <button class="card" data-go="videos"><b>🎥</b><strong>Video Classes</strong><small>Concept lectures</small></button>
+        <button class="card" data-go="updates"><b>📢</b><strong>Exam Updates</strong><small>Notices & alerts</small></button>
+        <button class="card" data-go="about"><b>🧬</b><strong>About</strong><small>Our scientific identity</small></button>
+      </div>
+
+      <div class="highlight">
+        <div>
+          <small>FOCUS AREA</small>
+          <h3>Genetics & Plant Breeding</h3>
+          <p>Mendelism, linkage, mutation, breeding methods, crop improvement and exam-oriented practice.</p>
+        </div>
+        <div class="dna">DNA<br>↓<br>RNA<br>↓<br>Protein<br>🌱</div>
+      </div>
+    </section>
+
+    <section class="page" id="courses">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>Courses</h2><p>Choose a subject</p></div></div>
+      <div class="list">
+        <article><span>🧬</span><div><h3>Genetics & Plant Breeding</h3><p>GPB • Genetics • Breeding • Crop Improvement</p></div><em>Core</em></article>
+        <article><span>🌾</span><div><h3>Agronomy</h3><p>Crop production, weed & water management</p></div></article>
+        <article><span>🧪</span><div><h3>Soil Science</h3><p>Soil fertility, chemistry and nutrition</p></div></article>
+        <article><span>🍎</span><div><h3>Horticulture</h3><p>Fruit, vegetable and floriculture</p></div></article>
+        <article><span>🦠</span><div><h3>Plant Pathology</h3><p>Diseases, pathogens and management</p></div></article>
+        <article><span>🐞</span><div><h3>Entomology</h3><p>Insects, pests and control</p></div></article>
+        <article><span>🐄</span><div><h3>Animal Husbandry</h3><p>Livestock and poultry basics</p></div></article>
+        <article><span>⚙️</span><div><h3>Agricultural Engineering</h3><p>Farm machinery, irrigation and energy</p></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="notes">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>Notes & PDFs</h2><p>Ready structure — add your PDFs anytime</p></div></div>
+      <div class="notice">📌 PDFs can be linked from Google Drive, your website or GitHub. Edit <b>content.js</b> to add them.</div>
+      <div id="notesList" class="resource-list"></div>
+    </section>
+
+    <section class="page" id="quiz">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>MCQ Practice</h2><p>Demo agriculture quiz with score tracking</p></div></div>
+      <div class="scorebar"><span>Question <b id="qNum">1</b>/<b id="qTotal">10</b></span><span>Score <b id="score">0</b></span></div>
+      <div class="quizbox">
+        <div class="topic" id="qTopic"></div>
+        <h3 id="qText"></h3>
+        <div id="options" class="options"></div>
+        <div id="explain" class="explain"></div>
+        <button id="nextBtn" class="primary" hidden>Next Question →</button>
+      </div>
+      <button id="restartBtn" class="secondary">Restart Quiz</button>
+    </section>
+
+    <section class="page" id="videos">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>Video Classes</h2><p>Add your YouTube lectures here</p></div></div>
+      <div id="videoList" class="resource-list"></div>
+    </section>
+
+    <section class="page" id="updates">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>Exam Updates</h2><p>Notices, tests and announcements</p></div></div>
+      <div id="updatesList" class="timeline"></div>
+    </section>
+
+    <section class="page" id="about">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><h2>About AgroLoci 51</h2><p>Science behind the name</p></div></div>
+      <div class="about-card">
+        <img src="assets/logo.png" alt="logo" />
+        <h2>AGROLOCI 51</h2>
+        <p><b>Agro</b> represents Agriculture. <b>Loci</b> is the plural of locus, a fundamental genetics term. <b>51</b> is a tribute to Photo 51, associated with Rosalind Franklin's X-ray diffraction work that contributed to understanding DNA structure.</p>
+        <div class="formula">DNA → RNA → Protein → Better Crops 🌱</div>
+        <p class="muted">Built for agriculture learning, revision and competitive exam preparation.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-go="home" class="active">⌂<span>Home</span></button>
+    <button data-go="courses">▦<span>Courses</span></button>
+    <button data-go="quiz">✓<span>Quiz</span></button>
+    <button data-go="notes">▤<span>Notes</span></button>
+  </nav>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
