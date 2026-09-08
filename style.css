@@ -200,3 +200,184 @@ button[title*="more" i]{
     min-height:44px;
   }
 }
+
+
+/* ===== AgroLoci 51 V3.4 CORRECT MOBILE FULLSCREEN FIX ===== */
+
+/* App fills viewport, but content scrolls only inside main. */
+html, body {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body {
+  min-height: 100dvh !important;
+  height: 100dvh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #f6faf7 !important;
+}
+
+/* Header remains at top; main gets only the remaining visible space. */
+.app-header,
+.topbar,
+header {
+  flex: 0 0 auto;
+}
+
+main {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-bottom: 96px !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page,
+#home {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* True fixed bottom navigation */
+.bottom-nav {
+  position: fixed !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+
+  width: calc(100% - 20px) !important;
+  max-width: 700px !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  margin: 0 !important;
+  padding: 7px 7px 8px !important;
+
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-around !important;
+  gap: 4px !important;
+
+  background: rgba(255,255,255,.97) !important;
+  border: 1px solid rgba(20,85,48,.10) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 8px 30px rgba(0,45,25,.16) !important;
+  backdrop-filter: blur(14px);
+}
+
+/* Large, clear bottom nav tap targets */
+.bottom-nav button,
+.bottom-nav a,
+.bottom-nav .nav-item {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  min-height: 62px !important;
+  height: 62px !important;
+  padding: 7px 4px 5px !important;
+  margin: 0 !important;
+  border-radius: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.bottom-nav svg,
+.bottom-nav i,
+.bottom-nav .icon,
+.bottom-nav .nav-icon {
+  width: 27px !important;
+  height: 27px !important;
+  font-size: 27px !important;
+  line-height: 27px !important;
+}
+
+.bottom-nav small,
+.bottom-nav span {
+  font-size: 11px !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+}
+
+/* Bigger top-left hamburger / top menu */
+.hamburger,
+.menu-btn,
+.more-btn,
+.top-menu-btn,
+.kebab-btn,
+#menuBtn,
+button[aria-label*="menu" i],
+button[aria-label*="navigation" i],
+button[aria-label*="more" i] {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  padding: 0 !important;
+  border-radius: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 29px !important;
+  line-height: 1 !important;
+}
+
+.hamburger svg,
+.menu-btn svg,
+.more-btn svg,
+.top-menu-btn svg,
+.kebab-btn svg,
+#menuBtn svg {
+  width: 29px !important;
+  height: 29px !important;
+}
+
+/* On narrow phones, slightly reduce card gaps, not nav size */
+@media (max-width: 640px) {
+  main {
+    padding-bottom: 100px !important;
+  }
+
+  .bottom-nav {
+    width: calc(100% - 14px) !important;
+    bottom: max(6px, env(safe-area-inset-bottom)) !important;
+    height: 80px !important;
+    min-height: 80px !important;
+  }
+
+  .bottom-nav button,
+  .bottom-nav a,
+  .bottom-nav .nav-item {
+    min-height: 64px !important;
+    height: 64px !important;
+  }
+
+  .bottom-nav svg,
+  .bottom-nav i,
+  .bottom-nav .icon,
+  .bottom-nav .nav-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 28px !important;
+  }
+}
+
+/* Installed PWA: use true dynamic viewport height */
+@media (display-mode: standalone) {
+  body {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+}
