@@ -1,4 +1,4 @@
-const CACHE = "agroloci51-v3-4";
+const CACHE = "agroloci51-v3-5";
 const CORE = [
   "./",
   "./index.html",

@@ -381,3 +381,257 @@ button[aria-label*="more" i] {
     min-height: 100dvh !important;
   }
 }
+
+
+/* ===== V3.5 READABLE MOBILE UI FIX ===== */
+/* Bigger text, bigger controls, and content uses more of the screen */
+
+@media (max-width: 640px) {
+
+  /* Header */
+  header,
+  .app-header,
+  .topbar {
+    min-height: 64px !important;
+  }
+
+  .brand,
+  .brand-title,
+  .app-title {
+    font-size: 17px !important;
+    line-height: 1.15 !important;
+  }
+
+  .brand small,
+  .brand-subtitle,
+  .app-subtitle {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hamburger,
+  .menu-btn,
+  #menuBtn {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    font-size: 31px !important;
+  }
+
+  .hamburger svg,
+  .menu-btn svg,
+  #menuBtn svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Use more screen width */
+  main,
+  .page,
+  .container,
+  .content,
+  .home-content {
+    max-width: 100% !important;
+  }
+
+  /* Hero */
+  .hero {
+    margin: 14px 10px 16px !important;
+    padding: 22px 18px !important;
+    min-height: 205px !important;
+    border-radius: 22px !important;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 26px !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero p {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .hero button {
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* Headings */
+  .section-title,
+  .section-head h2,
+  .section-head h3,
+  h2 {
+    font-size: 21px !important;
+  }
+
+  .section-head small,
+  .section-title small {
+    font-size: 11px !important;
+  }
+
+  /* Home cards become properly readable */
+  .grid,
+  .learning-grid,
+  .feature-grid {
+    gap: 12px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .card,
+  .feature-card,
+  .learning-card {
+    min-height: 118px !important;
+    padding: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .learning-card h3 {
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .card p,
+  .feature-card p,
+  .learning-card p {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  .card .icon,
+  .feature-card .icon,
+  .learning-card .icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+  }
+
+  /* GPB section */
+  .gpb-card,
+  .core-card,
+  .identity-card {
+    margin: 14px 10px !important;
+    padding: 20px !important;
+    min-height: 160px !important;
+    border-radius: 20px !important;
+  }
+
+  .gpb-card h3,
+  .core-card h3,
+  .identity-card h3 {
+    font-size: 18px !important;
+  }
+
+  .gpb-card p,
+  .core-card p,
+  .identity-card p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Exam strip */
+  .exam-strip {
+    margin: 12px 10px !important;
+    padding: 13px 14px !important;
+    min-height: 62px !important;
+  }
+
+  .exam-strip b {
+    font-size: 14px !important;
+  }
+
+  .exam-strip small {
+    font-size: 10px !important;
+  }
+
+  .exam-strip button {
+    min-height: 36px !important;
+    padding: 7px 11px !important;
+    font-size: 12px !important;
+  }
+
+  /* Quick cards */
+  .quick-zone {
+    gap: 12px !important;
+    margin: 12px 10px !important;
+  }
+
+  .quick-card {
+    min-height: 132px !important;
+    padding: 16px !important;
+  }
+
+  .quick-card h3 {
+    font-size: 14px !important;
+  }
+
+  .quick-card p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  .quick-card button {
+    min-height: 36px !important;
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .brand-footer {
+    margin: 12px 10px 110px !important;
+    padding: 16px !important;
+  }
+
+  .brand-footer b {
+    font-size: 13px !important;
+  }
+
+  .brand-footer span {
+    font-size: 10px !important;
+  }
+
+  /* Main should scroll naturally, not leave fake blank section */
+  main {
+    padding-bottom: 0 !important;
+  }
+
+  /* Bigger bottom navigation */
+  .bottom-nav {
+    width: calc(100% - 16px) !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    padding: 8px !important;
+    border-radius: 24px !important;
+  }
+
+  .bottom-nav button,
+  .bottom-nav a,
+  .bottom-nav .nav-item {
+    min-height: 72px !important;
+    height: 72px !important;
+    padding: 7px 5px !important;
+    gap: 6px !important;
+    font-size: 13px !important;
+  }
+
+  .bottom-nav svg,
+  .bottom-nav i,
+  .bottom-nav .icon,
+  .bottom-nav .nav-icon {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 30px !important;
+    line-height: 30px !important;
+  }
+
+  .bottom-nav small,
+  .bottom-nav span {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+  }
+}

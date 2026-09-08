@@ -1,15 +1,13 @@
-AgroLoci 51 V3.4 - Correct Fullscreen Mobile Fix
+AgroLoci 51 V3.5 Readable Mobile
 
-इस version में:
-- Bottom navigation phone screen के bottom पर FIXED है.
-- Bottom navigation के icons और text बड़े किए गए हैं.
-- ऊपर hamburger/menu button बड़ा किया गया है.
-- Main content screen के अंदर scroll होता है.
-- Bottom navigation के नीचे लंबा blank white page नहीं बनेगा.
-- Installed PWA के पुराने cache को हटाने के लिए cache version V3.4 किया गया है.
+Fixes:
+- Header text बड़ा
+- Hamburger बड़ा
+- Bottom navigation icons और labels बड़े
+- Cards और text बड़े
+- Home content ज्यादा vertical space use करता है
+- बीच का बहुत बड़ा खाली gap काफी कम होगा
+- Bottom nav fixed रहेगी
+- Cache updated to V3.5
 
-UPLOAD:
-ZIP extract करें → existing agroloci51 GitHub repo → Add file → Upload files → Commit changes.
-
-Deploy के बाद app पूरी तरह बंद करके दोबारा खोलें.
-अगर पुराना version दिखे तो installed app को एक बार हटाकर website से दोबारा Install करें.
+Upload all files to existing agroloci51 GitHub repo.
