@@ -39,3 +39,54 @@ main{max-width:860px;margin:auto;min-height:calc(100vh - 140px)}.page{display:no
 .chapter-list{display:grid;gap:10px}.chapter-card{width:100%;border:1px solid var(--line);background:#fff;border-radius:18px;padding:14px;text-align:left;display:flex;align-items:center;gap:12px}.chapter-num{width:42px;height:42px;min-width:42px;border-radius:13px;background:#edf7ef;color:#176332;display:grid;place-items:center;font-weight:900}.chapter-card h3{margin:0 0 3px;font-size:15px}.chapter-card p{margin:0;color:var(--muted);font-size:11px}.chapter-card .arrow{margin-left:auto;font-size:20px}
 .chapter-tabs{display:flex;gap:8px;padding:12px 15px;background:#fff;border-bottom:1px solid var(--line);overflow:auto}.ctab{border:0;background:#edf2ee;color:#5a6b5f;padding:9px 12px;border-radius:999px;font-weight:700;white-space:nowrap}.ctab.active{background:#0a4a2b;color:#fff}
 .lesson-card,.practice-q{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:10px}.lesson-card h3{margin:0 0 8px}.lesson-card p,.lesson-card li{font-size:13px;line-height:1.55;color:#425047}.lesson-card ul{padding-left:20px;margin-bottom:0}.cross{font-family:monospace;background:#082f1d;color:#c5ff9e;border-radius:14px;padding:14px;white-space:pre-wrap;line-height:1.5;font-size:12px}.keybox{background:#eff9eb;border-left:4px solid #67b94c;padding:12px;margin-top:10px;font-size:13px}.practice-q b{display:block;margin-bottom:6px}.practice-q small{color:var(--muted)}
+
+
+/* === V3.1 Compact mobile screen fix === */
+html, body {
+  min-height: 100%;
+}
+body {
+  padding-bottom: 70px;
+}
+main {
+  min-height: auto !important;
+}
+.page {
+  min-height: auto !important;
+}
+#home {
+  min-height: auto !important;
+}
+.bottom-nav {
+  position: sticky !important;
+  bottom: 0;
+  left: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 860px;
+  margin: 12px auto 0;
+  border-radius: 18px 18px 0 0;
+}
+@media(max-width:640px){
+  body{
+    padding-bottom:0 !important;
+  }
+  main{
+    min-height:auto !important;
+  }
+  #home{
+    min-height:auto !important;
+  }
+  .bottom-nav{
+    position:sticky !important;
+    bottom:0;
+    margin-top:10px;
+    height:62px;
+  }
+  .hero{
+    margin-bottom:0;
+  }
+  .exam-strip{
+    margin-bottom:10px;
+  }
+}
