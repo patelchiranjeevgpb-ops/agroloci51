@@ -60,12 +60,12 @@
   </div>
 
   <div class="dashboard-grid">
-    <button class="dash-card" data-go="courses"><span>📚</span><b>Subjects</b><small>Agriculture subject-wise learning</small></button>
-    <button class="dash-card" data-go="exams"><span>🎯</span><b>Competitive Exams</b><small>JET, ICAR, AO, AAO & more</small></button>
-    <button class="dash-card" data-go="notes"><span>📝</span><b>Notes & PDFs</b><small>Quick revision material</small></button>
-    <button class="dash-card" data-go="quiz"><span>✅</span><b>MCQ Practice</b><small>Score, explanation & progress</small></button>
-    <button class="dash-card" data-go="videos"><span>🎥</span><b>Video Classes</b><small>Concept lectures & playlists</small></button>
-    <button class="dash-card" data-go="updates"><span>📢</span><b>Exam Updates</b><small>Notices, dates & alerts</small></button>
+    <button class="dash-card" data-go="courses"><span class="ui-icon">S</span><b>Subjects</b><small>Agriculture subject-wise learning</small></button>
+    <button class="dash-card" data-go="exams"><span class="ui-icon">E</span><b>Competitive Exams</b><small>JET, ICAR, AO, AAO & more</small></button>
+    <button class="dash-card" data-go="notes"><span class="ui-icon">N</span><b>Notes & PDFs</b><small>Quick revision material</small></button>
+    <button class="dash-card" data-go="quiz"><span class="ui-icon">Q</span><b>MCQ Practice</b><small>Score, explanation & progress</small></button>
+    <button class="dash-card" data-go="videos"><span class="ui-icon">V</span><b>Video Classes</b><small>Concept lectures & playlists</small></button>
+    <button class="dash-card" data-go="updates"><span class="ui-icon">U</span><b>Exam Updates</b><small>Notices, dates & alerts</small></button>
   </div>
 
   <section class="focus-card">
@@ -102,6 +102,17 @@
   <div id="subjectContent" class="content-pad"></div>
 </section>
 
+<section class="page" id="geneticsCourse">
+<div class="page-head"><button data-go="subjectDetail">←</button><div><h2>Fundamentals of Genetics</h2><p>GPB Learning Module • Chapter-wise</p></div></div>
+<div class="course-hero"><div class="course-icon">DNA</div><div><span class="pill">GPB • CORE COURSE</span><h2>Fundamentals of Genetics</h2><p>Concept notes, revision points, MCQs and chapter tests.</p></div></div>
+<div class="progress-card"><div><b>Your course progress</b><small id="progressText">0 of 6 chapters opened</small></div><div class="progress-track"><i id="progressBar"></i></div></div>
+<div class="content-pad"><h3>Course Chapters</h3><div id="chapterList" class="chapter-list"></div></div>
+</section>
+<section class="page" id="chapterDetail">
+<div class="page-head"><button data-go="geneticsCourse">←</button><div><h2 id="chapterTitle">Chapter</h2><p>Fundamentals of Genetics</p></div></div>
+<div class="chapter-tabs"><button class="ctab active" data-ctab="learn">Learn</button><button class="ctab" data-ctab="revision">Quick Revision</button><button class="ctab" data-ctab="practice">Practice</button></div>
+<div id="chapterBody" class="content-pad"></div>
+</section>
 <section class="page" id="exams">
   <div class="page-head"><button data-go="home">←</button><div><h2>Competitive Exams</h2><p>Exam-specific preparation tracks</p></div></div>
   <div id="examGrid" class="exam-grid"></div>

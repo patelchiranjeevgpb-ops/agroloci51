@@ -31,7 +31,7 @@ function openSubject(id){
 function renderSubjectTab(tab){
  const s=currentSubject;if(!s)return;
  const box=$("#subjectContent");
- if(tab==="overview") box.innerHTML=`<div class="content-card"><h3>${s.title}</h3><p>${s.desc}</p></div>`+s.topics.map((t,i)=>`<div class="content-card"><h3>${i+1}. ${t}</h3><p>Topic structure ready. Notes, MCQs and videos can be added here.</p></div>`).join("");
+ if(tab==="overview"){if(s.id==="gpb") box.innerHTML=`<div class="content-card"><h3>${s.title}</h3><p>${s.desc}</p><button class="mini-btn" id="openGenetics">Open Fundamentals of Genetics →</button></div>`+s.topics.map((t,i)=>`<div class="content-card"><h3>${i+1}. ${t}</h3><p>GPB learning module.</p></div>`).join("");else box.innerHTML=`<div class="content-card"><h3>${s.title}</h3><p>${s.desc}</p></div>`+s.topics.map((t,i)=>`<div class="content-card"><h3>${i+1}. ${t}</h3><p>Topic structure ready. Notes, MCQs and videos can be added here.</p></div>`).join("");const og=$("#openGenetics");if(og)og.onclick=openGeneticsCourse;}
  if(tab==="notes") box.innerHTML=`<div class="content-card"><h3>Notes & PDFs</h3><p>Add chapter-wise PDFs for ${s.title} here.</p></div>`;
  if(tab==="mcq") box.innerHTML=`<div class="content-card"><h3>MCQ Practice</h3><p>Subject-specific question sets for ${s.title} can be added here.</p><button class="mini-btn" onclick="go('quiz')">Open Demo Quiz →</button></div>`;
  if(tab==="videos") box.innerHTML=`<div class="content-card"><h3>Video Classes</h3><p>Add YouTube playlists or lecture links for ${s.title}.</p></div>`;
@@ -82,6 +82,19 @@ function answer(i){
  $("#score").textContent=score;$("#explain").textContent="Explanation: "+x.e;$("#explain").style.display="block";$("#nextBtn").hidden=false;
 }
 $("#nextBtn").onclick=()=>{qi++;showQ()};$("#restartBtn").onclick=()=>{qi=0;score=0;showQ()};
+
+let currentChapter=null;
+function openGeneticsCourse(){renderChapters();go("geneticsCourse")}
+function renderChapters(){const opened=JSON.parse(localStorage.getItem("agroloci_chapters")||"[]");$("#chapterList").innerHTML=GENETICS_COURSE.map((c,i)=>`<button class="chapter-card" data-chapter="${c.id}"><span class="chapter-num">${i+1}</span><div><h3>${c.title}</h3><p>${c.desc}</p></div><span class="arrow">›</span></button>`).join("");$$("[data-chapter]").forEach(b=>b.onclick=()=>openChapter(b.dataset.chapter));$("#progressText").textContent=`${opened.length} of ${GENETICS_COURSE.length} chapters opened`;$("#progressBar").style.width=`${opened.length/GENETICS_COURSE.length*100}%`}
+function openChapter(id){currentChapter=GENETICS_COURSE.find(x=>x.id===id);if(!currentChapter)return;let opened=JSON.parse(localStorage.getItem("agroloci_chapters")||"[]");if(!opened.includes(id)){opened.push(id);localStorage.setItem("agroloci_chapters",JSON.stringify(opened))}$("#chapterTitle").textContent=currentChapter.title;$$(".ctab").forEach(x=>x.classList.toggle("active",x.dataset.ctab==="learn"));renderChapter("learn");go("chapterDetail")}
+function renderChapter(tab){const c=currentChapter;if(!c)return;if(tab==="learn")$("#chapterBody").innerHTML=c.learn.map(x=>`<div class="lesson-card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")+(c.id==="mendel"?`<div class="lesson-card"><h3>Monohybrid Cross</h3><div class="cross">P:  AA × aa
+       ↓
+F1:     Aa
+       ↓ selfing
+F2 genotype: 1 AA : 2 Aa : 1 aa
+F2 phenotype: 3 Dominant : 1 Recessive</div><div class="keybox"><b>Exam Key:</b> Phenotype 3:1 • Genotype 1:2:1</div></div>`:"");if(tab==="revision")$("#chapterBody").innerHTML=`<div class="lesson-card"><h3>Quick Revision</h3><ul>${c.revision.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;if(tab==="practice")$("#chapterBody").innerHTML=c.qs.map((q,i)=>`<div class="practice-q"><b>Q${i+1}. ${q[0]}</b><small>Answer: ${q[1]}</small></div>`).join("")+`<button class="primary full" onclick="go('quiz')">Open Full MCQ Practice →</button>`}
+$$(".ctab").forEach(t=>t.onclick=()=>{$$(".ctab").forEach(x=>x.classList.remove("active"));t.classList.add("active");renderChapter(t.dataset.ctab)});
+
 renderSubjects();renderExams();renderResources();showQ();
 
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;$("#installBtn").hidden=false});
