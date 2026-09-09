@@ -1,13 +1,17 @@
-AgroLoci 51 V3.5 Readable Mobile
+AgroLoci 51 V4 — Agriculture Coaching App Style
 
-Fixes:
-- Header text बड़ा
-- Hamburger बड़ा
-- Bottom navigation icons और labels बड़े
-- Cards और text बड़े
-- Home content ज्यादा vertical space use करता है
-- बीच का बहुत बड़ा खाली gap काफी कम होगा
-- Bottom nav fixed रहेगी
-- Cache updated to V3.5
+Home screen को Indian agriculture learning apps जैसी practical structure दी गई है:
+- Greeting + branded banner
+- Recorded Classes, Subjects, Mock Tests, Study Material, Exam Courses, Updates
+- Popular courses
+- Daily practice
+- Exam tracks
+- Dedicated GPB section
+- Large readable fixed bottom navigation
+- Large readable hamburger/header
+- No artificial giant blank space
 
-Upload all files to existing agroloci51 GitHub repo.
+Design is original AgroLoci 51 branding; it does not copy another app's logo/assets.
+
+Upload:
+Extract ZIP → existing agroloci51 repo → Add file → Upload files → Commit changes.

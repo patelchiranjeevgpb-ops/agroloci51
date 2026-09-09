@@ -1,46 +1,11 @@
-const CACHE = "agroloci51-v3-5";
-const CORE = [
-  "./",
-  "./index.html",
-  "./manifest.webmanifest",
-  "./assets/logo.png",
-  "./assets/icon-192.png",
-  "./assets/icon-512.png"
-];
-
-self.addEventListener("install", event => {
-  self.skipWaiting();
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)));
-});
-
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    Promise.all([
-      self.clients.claim(),
-      caches.keys().then(keys =>
-        Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))
-      )
-    ])
-  );
-});
-
-self.addEventListener("fetch", event => {
-  const url = new URL(event.request.url);
-
-  if (
-    url.pathname.endsWith(".css") ||
-    url.pathname.endsWith(".js") ||
-    url.pathname.endsWith("index.html") ||
-    url.pathname.endsWith("/agroloci51/")
-  ) {
-    event.respondWith(
-      fetch(event.request, { cache: "no-store" })
-        .catch(() => caches.match(event.request))
-    );
-    return;
+const CACHE="agroloci51-v4";
+const CORE=["./","./index.html","./manifest.webmanifest","./assets/logo.png","./assets/icon-192.png","./assets/icon-512.png"];
+self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)))});
+self.addEventListener("activate",e=>{e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))]))});
+self.addEventListener("fetch",e=>{
+  const u=new URL(e.request.url);
+  if(u.pathname.endsWith(".css")||u.pathname.endsWith(".js")||u.pathname.endsWith("index.html")||u.pathname.endsWith("/agroloci51/")){
+    e.respondWith(fetch(e.request,{cache:"no-store"}).catch(()=>caches.match(e.request)));return;
   }
-
-  event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request))
-  );
+  e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));
 });

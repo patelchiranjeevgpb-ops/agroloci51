@@ -9,7 +9,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icon-192.png">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <link rel="stylesheet" href="style.css?v=35">
+  <link rel="stylesheet" href="style.css?v=40">
 </head>
 <body>
 <header class="topbar">
@@ -40,65 +40,100 @@
 <div class="overlay" id="overlay"></div>
 
 <main>
-<section class="page active" id="home">
-  <div class="hero">
-    <img src="assets/logo.png" class="hero-logo" alt="AgroLoci 51">
-    <div class="hero-copy">
-      <p class="eyebrow">AGRICULTURE • GENETICS • EXAMS</p>
-      <h1>AgroLoci 51</h1>
-      <p>Agriculture Learning & Competitive Exams</p>
-      <div class="hero-actions">
-        <button data-go="courses" class="primary">Start Learning</button>
-        <button data-go="quiz" class="ghost">Take Quiz</button>
+<section class="page active oa-home" id="home">
+
+  <section class="oa-welcome">
+    <div>
+      <span class="oa-kicker">AGROLOCI 51</span>
+      <h1>Hello, Learner!</h1>
+      <p>Prepare smarter for Agriculture exams</p>
+    </div>
+    <img src="assets/logo.png" alt="AgroLoci 51">
+  </section>
+
+  <section class="oa-banner">
+    <div class="oa-banner-copy">
+      <span>AGRICULTURE • GENETICS • EXAMS</span>
+      <h2>Learn. Practice. Crack.</h2>
+      <p>Notes, classes, PYQs and mock tests — all in one place.</p>
+      <div>
+        <button class="oa-primary" data-go="courses">Start Learning</button>
+        <button class="oa-secondary" data-go="quiz">Free Test</button>
       </div>
     </div>
-  </div>
-
-  <div class="section-head">
-    <div><p class="eyebrow dark">LEARNING HUB</p><h2>Explore AgroLoci 51</h2></div>
-    <small>All in one place</small>
-  </div>
-
-  <div class="dashboard-grid">
-    <button class="dash-card" data-go="courses"><span class="ui-icon">S</span><b>Subjects</b><small>Agriculture subject-wise learning</small></button>
-    <button class="dash-card" data-go="exams"><span class="ui-icon">E</span><b>Competitive Exams</b><small>JET, ICAR, AO, AAO & more</small></button>
-    <button class="dash-card" data-go="notes"><span class="ui-icon">N</span><b>Notes & PDFs</b><small>Quick revision material</small></button>
-    <button class="dash-card" data-go="quiz"><span class="ui-icon">Q</span><b>MCQ Practice</b><small>Score, explanation & progress</small></button>
-    <button class="dash-card" data-go="videos"><span class="ui-icon">V</span><b>Video Classes</b><small>Concept lectures & playlists</small></button>
-    <button class="dash-card" data-go="updates"><span class="ui-icon">U</span><b>Exam Updates</b><small>Notices, dates & alerts</small></button>
-  </div>
-
-  <section class="focus-card">
-    <div>
-      <p class="eyebrow">CORE IDENTITY</p>
-      <h3>Genetics & Plant Breeding</h3>
-      <p>Mendelism, linkage, mutation, molecular genetics, breeding methods and crop improvement.</p>
-      <button data-subject="gpb" class="mini-btn">Open GPB →</button>
-    </div>
-    <div class="flow">DNA<br>↓<br>RNA<br>↓<br>Protein<br>🌱</div>
+    <div class="oa-dna">DNA<br>↓<br>RNA<br>↓<br>🌱</div>
   </section>
 
-  <section class="exam-strip">
-    <div><b>Popular Exam Tracks</b><small>Start targeted preparation</small></div>
+  <div class="oa-section-title">
+    <h2>Explore</h2>
+    <span>Everything you need</span>
+  </div>
+
+  <section class="oa-feature-grid">
+    <button data-go="videos"><span class="oa-icon">▶</span><b>Recorded Classes</b><small>Watch anytime</small></button>
+    <button data-go="courses"><span class="oa-icon">▦</span><b>Subjects</b><small>Topic-wise learning</small></button>
+    <button data-go="quiz"><span class="oa-icon">✓</span><b>Mock Tests</b><small>Practice & score</small></button>
+    <button data-go="notes"><span class="oa-icon">▤</span><b>Study Material</b><small>Notes & PDFs</small></button>
+    <button data-go="exams"><span class="oa-icon">◎</span><b>Exam Courses</b><small>JET, ICAR, AO</small></button>
+    <button data-go="updates"><span class="oa-icon">!</span><b>Exam Updates</b><small>Dates & alerts</small></button>
+  </section>
+
+  <div class="oa-section-title">
+    <h2>Popular Courses</h2>
+    <button data-go="courses">View all</button>
+  </div>
+
+  <section class="oa-course-row">
+    <button class="oa-course-card green" data-subject="gpb">
+      <span class="oa-course-tag">GPB</span>
+      <h3>Fundamentals of Genetics</h3>
+      <p>Mendelism • Linkage • Mutation • DNA</p>
+      <b>Start Course →</b>
+    </button>
+    <button class="oa-course-card light" data-go="exams">
+      <span class="oa-course-tag">EXAMS</span>
+      <h3>Pre-PG / JET Preparation</h3>
+      <p>PYQs • Revision • Mock Tests</p>
+      <b>Explore →</b>
+    </button>
+  </section>
+
+  <section class="oa-strip">
+    <div>
+      <span>TODAY'S PRACTICE</span>
+      <h3>10 Agriculture MCQs</h3>
+      <p>Quick revision with instant score</p>
+    </div>
+    <button data-go="quiz">Start Test</button>
+  </section>
+
+  <div class="oa-section-title">
+    <h2>Exam Tracks</h2>
+    <span>Choose your target</span>
+  </div>
+
+  <section class="oa-exam-pills">
     <button data-exam="jet">JET</button>
     <button data-exam="icar">ICAR</button>
-    <button data-exam="ao">AO/AAO</button>
+    <button data-exam="ao">AO / AAO</button>
+    <button data-go="exams">Pre-PG</button>
   </section>
-  <section class="quick-zone">
-    <div class="quick-card">
-      <span class="quick-badge">TODAY</span>
-      <h3>10 Question Quick Test</h3>
-      <p>Revise Agriculture in a few minutes.</p>
-      <button data-go="quiz">Start Practice →</button>
-    </div>
-    <div class="quick-card science">
-      <span class="quick-badge">GENETICS</span>
-      <h3>DNA → RNA → Protein</h3>
-      <p>Continue the GPB Fundamentals of Genetics module.</p>
+
+  <section class="oa-gpb">
+    <div>
+      <span>CORE LEARNING</span>
+      <h2>Genetics & Plant Breeding</h2>
+      <p>Your dedicated GPB learning zone with chapter-wise concepts, revision and practice.</p>
       <button data-subject="gpb">Open GPB →</button>
     </div>
+    <div class="oa-gpb-mark">51</div>
   </section>
-  <div class="brand-footer"><b>AGROLOCI 51</b><span>Agriculture • Genetics • Excellence</span></div>
+
+  <div class="oa-end">
+    <img src="assets/logo.png" alt="">
+    <div><b>AGROLOCI 51</b><span>Agriculture Learning & Competitive Exams</span></div>
+  </div>
+
 </section>
 
 <section class="page" id="courses">
@@ -190,7 +225,7 @@
   <button data-go="notes">▤<span>Notes</span></button>
 </nav>
 
-<script src="content.js?v=35"></script>
-<script src="app.js?v=35"></script>
+<script src="content.js?v=40"></script>
+<script src="app.js?v=40"></script>
 </body>
 </html>
