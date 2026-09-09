@@ -1,9 +1,8 @@
-const CACHE="agroloci51-v5";
+const CACHE="agroloci51-v5-1";
 const CORE=[
   "./",
   "./index.html",
-  "./style.css?v=50",
-  "./responsive.css?v=50",
+  "./style.css?v=51",
   "./manifest.webmanifest",
   "./assets/logo.png",
   "./assets/icon-192.png",
@@ -20,7 +19,7 @@ self.addEventListener("activate", event => {
     Promise.all([
       self.clients.claim(),
       caches.keys().then(keys =>
-        Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+        Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))
       )
     ])
   );
@@ -35,7 +34,7 @@ self.addEventListener("fetch", event => {
     url.pathname.endsWith("/agroloci51/")
   ) {
     event.respondWith(
-      fetch(event.request, {cache:"no-store"})
+      fetch(event.request, { cache: "no-store" })
         .catch(() => caches.match(event.request))
     );
     return;
